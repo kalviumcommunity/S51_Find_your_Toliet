@@ -16,4 +16,3 @@ Notifications: Implement push notifications to inform users about important upda
 
 Accessibility Information: Include details about toilet facilities for individuals with special needs, such as wheelchair accessibility and baby-changing stations.
 
-"Find Your Toilet" aims to enhance public hygiene experiences by harnessing the collective efforts of its user community, providing a valuable resource for individuals seeking clean and accessible toilets in any given location.
