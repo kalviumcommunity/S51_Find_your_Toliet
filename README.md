@@ -16,3 +16,4 @@ Notifications: Implement push notifications to inform users about important upda
 
 Accessibility Information: Include details about toilet facilities for individuals with special needs, such as wheelchair accessibility and baby-changing stations.
 
+Deployed link : https://find-your-toliet.onrender.com
