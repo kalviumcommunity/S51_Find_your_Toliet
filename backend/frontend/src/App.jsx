@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       {/* < Biodata/> */}
-      < Dummy/>
-      {/* < Sampleentity/> */}
+      {/* < Dummy/> */}
+      < Sampleentity/>
     </>
   )
 }
