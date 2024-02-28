@@ -10,8 +10,12 @@ function App() {
     <>
       {/* < Biodata/> */}
       {/* < Dummy/> */}
+
       {/* < Sampleentity/> */}
       <Listalldata/>
+
+//       < Sampleentity/>
+
     </>
   )
 }
