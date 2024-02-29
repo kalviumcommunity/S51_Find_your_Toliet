@@ -16,6 +16,16 @@ app.get('/getrecords',(req,res)=>{
   .catch(err=>console.log(err));
 })
 
+
+app.post('/createrecords',(req,res)=>{
+  usermodel.create(req.body)
+    .then((user) => res.json(user))
+    .catch((error) => {
+      console.error("Error creating user:", error);
+    });
+})
+
+
 mongoose.connect("mongodb+srv://jayavarsanr:jayavarsan@findyourtoilet.e1nama6.mongodb.net/Findyourtoilet?retryWrites=true&w=majority&appName=Findyourtoilet")
   .then(() => {
     console.log('Connected to MongoDB');
