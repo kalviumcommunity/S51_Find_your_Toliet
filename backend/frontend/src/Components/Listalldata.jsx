@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios  from "axios";
 import '../styles/sample.css'
+import { Link } from 'react-router-dom';
 function Listalldata() {
     const [Data , setData] = useState([]);
 
@@ -19,12 +20,15 @@ function Listalldata() {
             <p className='other_elemnts'>Type: {e.type}</p>
             <p className='other_elemnts'>{e.city}</p>
             <p className='other_elemnts'>Rating: {e.Rating}/5 </p>
+            <Link to={`/edit/${e._id}`} >Updae/edit</Link>
           </div>
           <div className='map_div'>
             <iframe src={e.Location} width="100%" height="100%" frameBorder="0" allowFullScreen title={`Map ${index}`}></iframe>
-          </div>  
+          </div>
+          < Link to={`/edit/${e._id}`}></Link>  
         </div>
       ))}
+      <Link to={'/update'}>Add More Toliets</Link>
     </>
   )
 }

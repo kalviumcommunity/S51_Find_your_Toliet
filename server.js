@@ -16,6 +16,13 @@ app.get('/getrecords',(req,res)=>{
   .catch(err=>console.log(err));
 })
 
+app.get('/getrecords/:id',(req,res)=>{
+  const  id= req.params.id;
+  usermodel.findById({_id})
+  .then(users => res.json(users))
+  .catch(err=>console.log(err));
+})
+
 
 app.post('/createrecords',(req,res)=>{
   usermodel.create(req.body)
@@ -25,7 +32,23 @@ app.post('/createrecords',(req,res)=>{
     });
 })
 
+app.put('/getrecords/:id',(req,res)=>{
+  const  id= req.params.id;
+  usermodel.findByIdAndUpdate({_id},{
+    ID:req.body.ID,
+    Name:req.body.Name,
+    type:req.body.type,
+    city:req.body.city,
+    Location:req.body.Location,
+    Rating:req.body.Rating
+  })
+  .then(users => res.json(users))
+  .catch(err=>console.log(err));
+})
 
+
+
+ 
 mongoose.connect("mongodb+srv://jayavarsanr:jayavarsan@findyourtoilet.e1nama6.mongodb.net/Findyourtoilet?retryWrites=true&w=majority&appName=Findyourtoilet")
   .then(() => {
     console.log('Connected to MongoDB');
