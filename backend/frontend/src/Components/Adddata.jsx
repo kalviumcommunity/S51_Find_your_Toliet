@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Form.css'
 
 function AddData() {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ function AddData() {
           Location: '',
           Rating: ''
         });
-        navigate('/alldata');
+        navigate('/');
       })
       .catch((error) => {
         console.error('Error adding data:', error);
@@ -42,7 +43,7 @@ function AddData() {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h2>Add Data</h2>
       <form onSubmit={handleSubmit}>
         <label>
