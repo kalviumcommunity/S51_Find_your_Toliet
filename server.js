@@ -65,6 +65,8 @@ app.put('/getrecords/:id',(req,res)=>{
     console.log('update error', e);
 }})
 
+
+// login endpoint
 app.post('/login', (req, res) => {
   const { username } = req.body;
   res.cookie('username', username);
