@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const port = 3000;
 const cors = require('cors');
 const usermodel = require('./dbconfig')
+const updateAndPostValidator = require('./backend/validator')
 
 
 app.use(cors());
@@ -24,17 +25,31 @@ app.get('/getrecords/:id',(req,res)=>{
 })
 
 
-app.post('/createrecords',(req,res)=>{
-  usermodel.create(req.body)
-    .then((user) => res.json(user))
-    .catch((error) => {
-      console.error("Error creating user:", error);
-    });
+app.post('/createrecords', async (req,res)=>{
+
+    try{
+      const { error, value } = updateAndPostValidator(req.body);
+    if (error) {
+      return res.status(400).json(error.details);
+    }
+    else{
+      usermodel.create(req.body)
+      .then((user) => res.json(user))
+
+    }}catch(e){
+        console.error("Error creating user:", error);
+    }
 })
 
 app.put('/getrecords/:id',(req,res)=>{
-  const  id= req.params.id;
-  usermodel.findByIdAndUpdate({_id},{
+  
+  try{
+    const { error, value } = updateAndPostJoi(req.body);
+  if (error) {
+    return res.status(400).json(error.details);
+  }else{
+    const  id= req.params.id;
+    usermodel.findByIdAndUpdate({_id},{
     ID:req.body.ID,
     Name:req.body.Name,
     type:req.body.type,
@@ -43,11 +58,10 @@ app.put('/getrecords/:id',(req,res)=>{
     Rating:req.body.Rating
   })
   .then(users => res.json(users))
-  .catch(err=>console.log(err));
-})
-
-
-
+  }
+} catch(e){
+    console.log('update error', e);
+}})
  
 mongoose.connect("mongodb+srv://jayavarsanr:jayavarsan@findyourtoilet.e1nama6.mongodb.net/Findyourtoilet?retryWrites=true&w=majority&appName=Findyourtoilet")
   .then(() => {
