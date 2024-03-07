@@ -5,9 +5,11 @@ const port = 3000;
 const cors = require('cors');
 const usermodel = require('./dbconfig')
 const updateAndPostValidator = require('./backend/validator')
+const cookieParser = require('cookie-parser')
 
 
 app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
 // Connect to MongoDB
@@ -62,6 +64,18 @@ app.put('/getrecords/:id',(req,res)=>{
 } catch(e){
     console.log('update error', e);
 }})
+
+app.post('/login', (req, res) => {
+  const { username } = req.body;
+  res.cookie('username', username);
+  res.send('Login successful');
+});
+
+// Logout endpoint
+app.get('/logout', (req, res) => {
+  res.clearCookie('username');
+  res.send('Logout successful');
+});
  
 mongoose.connect("mongodb+srv://jayavarsanr:jayavarsan@findyourtoilet.e1nama6.mongodb.net/Findyourtoilet?retryWrites=true&w=majority&appName=Findyourtoilet")
   .then(() => {
