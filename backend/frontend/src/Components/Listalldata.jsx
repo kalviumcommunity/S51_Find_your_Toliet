@@ -19,9 +19,7 @@ function Listalldata() {
     };
 
     // Function to clear filter
-    const clearFilter = () => {
-        setFilterType('');
-    };
+
     const handleDelete = (id) => {
       axios.delete(`http://localhost:3000/delete/${id}`) // Use backticks for dynamic URL
           .then(res => {
