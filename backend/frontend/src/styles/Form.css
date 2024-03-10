@@ -1,19 +1,7 @@
-
-  
-  .container {
-    position: relative;
-    left: 20vw;
-    top: 8vh;
-    background-color: #fff;
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    padding: 20px;
-    width: 60vw;
-    max-width :500px; ;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 70vh;
-    place-items: center;
-  }
+/* *{
+  padding: 0%;
+  margin: 0%;
+} */
   
   form {
     display: flex;
@@ -25,7 +13,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 85%;
+    width: 97%;
     display: block;
   }
   
@@ -38,10 +26,12 @@
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     margin-top: 10px;
+    width: 30%;
+    margin-left: 35%;
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #ea5f1f;
     transform: scale(1.1);
   }
   

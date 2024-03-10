@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function Update() {
-    const {id} = useParams()
+    const { id } = useParams();
 
     const [formData, setFormData] = useState({
         ID: '',
@@ -12,70 +12,69 @@ function Update() {
         city: '',
         Location: '',
         Rating: ''
-      });
-      const navigate = useNavigate();
+    });
+    const navigate = useNavigate();
 
-      useEffect(()=>{
-        axios.get('http://localhost:3000/getrecords'+id)
-        .then(res =>  setFormData(res.data))
-        .catch(err => console.log(err));
-    },[])
+    useEffect(() => {
+        axios.get(`http://localhost:3000/getrecords/${id}`) // Corrected URL
+            .then(res => setFormData(res.data))
+            .catch(err => console.log(err));
+    }, [id]); // Include id in dependency array to fetch data when id changes
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
-          ...prevState,
-          [name]: value
+            ...prevState,
+            [name]: value
         }));
-      };
+    };
 
-
-      const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:3000/createrecords/'+id, formData)
-          .then((response) => {
-            console.log('Data successfully added:', response.data);
-            setFormData({
-              ID: '',
-              Name: '',
-              type: '',
-              city: '',
-              Location: '',
-              Rating: ''
+        axios.put(`http://localhost:3000/getrecords/${id}`, formData) // Corrected URL
+            .then((response) => {
+                console.log('Data successfully updated:', response.data);
+                setFormData({
+                    ID: '',
+                    Name: '',
+                    type: '',
+                    city: '',
+                    Location: '',
+                    Rating: ''
+                });
+                navigate('/');
+            })
+            .catch((error) => {
+                console.error('Error updating data:', error);
             });
-            navigate('/');
-          })
-          .catch((error) => {
-            console.error('Error adding data:', error);
-          });
-      };
+    };
   return (
-    <div><div>
-    <h2>Add Data</h2>
+    <div className='main_div_update1'><div className='main_div_update'>
+    <h2>Edit Data</h2>
     <form onSubmit={handleSubmit}>
       <label>
         ID:
-        <input type="text" name="ID" value={formData.ID} onChange={handleChange}  value={formData.ID} />
+        <input type="text" name="ID" value={formData.ID} onChange={handleChange}   />
       </label><br />
       <label>
         Name:
-        <input type="text" name="Name" value={formData.Name} onChange={handleChange} value={formData.name} />
+        <input type="text" name="Name" value={formData.Name} onChange={handleChange}  />
       </label><br />
       <label>
         Type:
-        <input type="text" name="type" value={formData.type} onChange={handleChange} value={formData.type} />
+        <input type="text" name="type" value={formData.type} onChange={handleChange}  />
       </label><br />
       <label>
         City:
-        <input type="text" name="city" value={formData.city} onChange={handleChange} value={formData.city} />
+        <input type="text" name="city" value={formData.city} onChange={handleChange}  />
       </label><br />
       <label>
         Location:
-        <input type="text" name="Location" value={formData.Location} onChange={handleChange}  value={formData.Location}/>
+        <input type="text" name="Location" value={formData.Location} onChange={handleChange} />
       </label><br />
       <label>
         Rating:
-        <input type="text" name="Rating" value={formData.Rating} onChange={handleChange} value={formData.Rating}  />
+        <input type="text" name="Rating" value={formData.Rating} onChange={handleChange}   />
       </label><br />
       <button type="submit">Update</button>
     </form>

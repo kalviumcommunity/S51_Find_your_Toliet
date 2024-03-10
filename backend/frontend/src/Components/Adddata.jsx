@@ -43,36 +43,36 @@ function AddData() {
   };
 
   return (
-    <div className='container'>
-      <h2>Add Data</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          ID:
-          <input type="text" name="ID" value={formData.ID} onChange={handleChange} />
-        </label><br />
-        <label>
-          Name:
-          <input type="text" name="Name" value={formData.Name} onChange={handleChange} />
-        </label><br />
-        <label>
-          Type:
-          <input type="text" name="type" value={formData.type} onChange={handleChange} />
-        </label><br />
-        <label>
-          City:
-          <input type="text" name="city" value={formData.city} onChange={handleChange} />
-        </label><br />
-        <label>
-          Location:
-          <input type="text" name="Location" value={formData.Location} onChange={handleChange} />
-        </label><br />
-        <label>
-          Rating:
-          <input type="text" name="Rating" value={formData.Rating} onChange={handleChange} />
-        </label><br />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <div className='main_div_update1'><div className='main_div_update'>
+    <h2>Add Data</h2>
+    <form onSubmit={handleSubmit}>
+      <label>
+        ID:
+        <input type="text" name="ID" value={formData.ID} onChange={handleChange}   />
+      </label><br />
+      <label>
+        Name:
+        <input type="text" name="Name" value={formData.Name} onChange={handleChange}  />
+      </label><br />
+      <label>
+        Type:
+        <input type="text" name="type" value={formData.type} onChange={handleChange}  />
+      </label><br />
+      <label>
+        City:
+        <input type="text" name="city" value={formData.city} onChange={handleChange}  />
+      </label><br />
+      <label>
+        Location:
+        <input type="text" name="Location" value={formData.Location} onChange={handleChange} />
+      </label><br />
+      <label>
+        Rating:
+        <input type="text" name="Rating" value={formData.Rating} onChange={handleChange}   />
+      </label><br />
+      <button type="submit">Submit</button>
+    </form>
+  </div></div>
   );
 }
 
