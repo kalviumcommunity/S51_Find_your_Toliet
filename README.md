@@ -1,4 +1,4 @@
-"Find Your Toilet" is a user-friendly mobile application designed to help individuals locate nearby public toilets efficiently. The app provides a comprehensive list of available toilets within a specified location, ensuring users can easily find accessible and clean facilities when needed. Users can create accounts to log in, enabling them to contribute to the community by updating the condition of toilets, rating their cleanliness, and adding information about newly discovered facilities.
+"Find Your Toilet" is a user-friendly Website  designed to help individuals locate nearby public toilets efficiently. The app provides a comprehensive list of available toilets within a specified location, ensuring users can easily find accessible and clean facilities when needed. Users can create accounts to log in, enabling them to contribute to the community by updating the condition of toilets, rating their cleanliness, and adding information about newly discovered facilities.
 
 Key features of the app include:
 
