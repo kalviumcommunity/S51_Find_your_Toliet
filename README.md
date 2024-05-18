@@ -16,4 +16,6 @@ Notifications: Implement push notifications to inform users about important upda
 
 Accessibility Information: Include details about toilet facilities for individuals with special needs, such as wheelchair accessibility and baby-changing stations.
 
+Front end Deployed link : https://findyourtoilet.netlify.app/
+
 Deployed link : https://find-your-toliet.onrender.com
